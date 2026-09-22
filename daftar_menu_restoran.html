@@ -1,0 +1,946 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Michael Chinese Food</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: Arial, Helvetica, sans-serif;
+            background-color: #f8ead5;
+            color: #333;
+        }
+
+        /* ================= NAVBAR ================= */
+
+        nav {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 65px;
+            background-color: #9e1f20;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0 7%;
+            z-index: 1000;
+            box-shadow: 0 3px 10px rgba(0,0,0,0.25);
+        }
+
+        .logo {
+            color: white;
+            font-size: 22px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .logo span {
+            color: #f5d9a6;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 28px;
+        }
+
+        nav ul li a {
+            color: white;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+
+        nav ul li a:hover {
+            color: #f5d9a6;
+        }
+
+        /* ================= HOME ================= */
+
+        #home {
+            min-height: 720px;
+            margin-top: 65px;
+            position: relative;
+            display: flex;
+            align-items: center;
+            overflow: hidden;
+
+            background:
+                linear-gradient(
+                    rgba(125, 20, 22, 0.70),
+                    rgba(125, 20, 22, 0.70)
+                ),
+                url("https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1600&q=80");
+
+            background-size: cover;
+            background-position: center;
+        }
+
+        .home-content {
+            width: 90%;
+            max-width: 1100px;
+            margin: auto;
+            color: white;
+            text-align: center;
+        }
+
+        .home-content .small-title {
+            font-size: 16px;
+            letter-spacing: 4px;
+            margin-bottom: 15px;
+        }
+
+        .home-content h1 {
+            font-size: 65px;
+            margin-bottom: 15px;
+            font-family: Georgia, serif;
+        }
+
+        .home-content h1 span {
+            color: #f5d9a6;
+        }
+
+        .home-content p {
+            font-size: 18px;
+            max-width: 650px;
+            margin: auto;
+            line-height: 1.7;
+        }
+
+        .home-button {
+            display: inline-block;
+            margin-top: 30px;
+            padding: 14px 30px;
+            background-color: #f5d9a6;
+            color: #8e1b1d;
+            text-decoration: none;
+            font-weight: bold;
+            border-radius: 4px;
+            transition: 0.3s;
+        }
+
+        .home-button:hover {
+            background-color: white;
+            transform: translateY(-3px);
+        }
+
+        /* ================= MENU ================= */
+
+        .menu-section {
+            padding: 80px 7%;
+            background-color: #f8ead5;
+        }
+
+        .section-title {
+            text-align: center;
+            margin-bottom: 45px;
+        }
+
+        .section-title .line {
+            width: 50px;
+            height: 4px;
+            background-color: #a51f21;
+            margin: 0 auto 15px;
+        }
+
+        .section-title h2 {
+            font-size: 38px;
+            color: #a51f21;
+            font-family: Georgia, serif;
+        }
+
+        .section-title p {
+            margin-top: 10px;
+            color: #666;
+        }
+
+        .menu-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+
+        .menu-card {
+            background-color: #a51f21;
+            color: white;
+            text-align: center;
+            padding: 25px;
+            border-radius: 3px;
+            box-shadow: 0 8px 20px rgba(0,0,0,0.15);
+            transition: 0.3s;
+        }
+
+        .menu-card:hover {
+            transform: translateY(-8px);
+        }
+
+        .menu-image {
+            width: 100%;
+            height: 180px;
+            object-fit: cover;
+            margin-bottom: 20px;
+        }
+
+        .menu-card h3 {
+            font-family: Georgia, serif;
+            font-size: 23px;
+            margin-bottom: 10px;
+        }
+
+        .menu-card p {
+            font-size: 14px;
+            line-height: 1.6;
+            margin-bottom: 15px;
+        }
+
+        .price {
+            color: #f5d9a6;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .menu-more {
+            text-align: center;
+            margin-top: 35px;
+        }
+
+        .menu-more a {
+            display: inline-block;
+            background-color: #a51f21;
+            color: white;
+            text-decoration: none;
+            padding: 12px 28px;
+            font-size: 14px;
+        }
+
+        /* ================= PROFIL ================= */
+
+        #profil {
+            padding: 90px 7%;
+            background-color: #fff8ed;
+        }
+
+        .profile-container {
+            max-width: 1000px;
+            margin: auto;
+            display: flex;
+            align-items: center;
+            gap: 60px;
+        }
+
+        .profile-photo {
+            width: 330px;
+            height: 400px;
+            object-fit: cover;
+            border: 10px solid #a51f21;
+            box-shadow: 10px 10px 0 #e4c79d;
+        }
+
+        .profile-info {
+            flex: 1;
+        }
+
+        .profile-info h2 {
+            color: #a51f21;
+            font-family: Georgia, serif;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .profile-info h3 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+
+        .profile-info p {
+            line-height: 1.8;
+            margin-bottom: 12px;
+        }
+
+        .profile-info strong {
+            color: #a51f21;
+        }
+
+        /* ================= ABOUT ================= */
+
+        #about {
+            padding: 90px 7%;
+            background-color: #a51f21;
+            color: white;
+        }
+
+        .about-container {
+            max-width: 1000px;
+            margin: auto;
+            text-align: center;
+        }
+
+        .about-container h2 {
+            font-family: Georgia, serif;
+            font-size: 40px;
+            margin-bottom: 25px;
+        }
+
+        .about-container p {
+            line-height: 1.9;
+            font-size: 16px;
+            margin-bottom: 18px;
+        }
+
+        /* ================= GALLERY ================= */
+
+        #gallery {
+            padding: 90px 7%;
+            background-color: #f8ead5;
+        }
+
+        .gallery-container {
+            max-width: 1100px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+        }
+
+        .gallery-container img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: 0.3s;
+        }
+
+        .gallery-container img:hover {
+            transform: scale(1.03);
+        }
+
+        .gallery-video {
+    width: 312%;
+    margin: 40px auto 0;
+    background-color: #000;
+    padding: 8px;
+    border-radius: 5px;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+.gallery-video video {
+    width: 100%;
+    height: 500px;
+    display: block;
+    object-fit: cover;
+}
+
+        /* ================= KONTAK ================= */
+
+        #kontak {
+            padding: 90px 7%;
+            background-color: #fff8ed;
+        }
+
+        .contact-container {
+            max-width: 900px;
+            margin: auto;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 25px;
+        }
+
+        .contact-card {
+            background-color: #a51f21;
+            color: white;
+            padding: 30px;
+            text-align: center;
+            border-radius: 5px;
+        }
+
+        .contact-card h3 {
+            margin-bottom: 15px;
+            font-family: Georgia, serif;
+            font-size: 23px;
+        }
+
+        .contact-card a {
+            color: #f5d9a6;
+            text-decoration: none;
+            font-size: 17px;
+            font-weight: bold;
+        }
+
+        .contact-card a:hover {
+            color: white;
+        }
+
+        /* ================= LOCATION ================= */
+
+        #location {
+            padding: 90px 7%;
+            background-color: #e5c89e;
+            text-align: center;
+        }
+
+        .location-box {
+            max-width: 800px;
+            margin: auto;
+        }
+
+        .location-box h2 {
+            color: #8e1b1d;
+            font-family: Georgia, serif;
+            font-size: 40px;
+            margin-bottom: 20px;
+        }
+
+        .location-box p {
+            font-size: 17px;
+            line-height: 1.8;
+        }
+
+        .location-button {
+            display: inline-block;
+            margin-top: 25px;
+            padding: 13px 28px;
+            background-color: #a51f21;
+            color: white;
+            text-decoration: none;
+        }
+
+        /* ================= FOOTER ================= */
+
+        footer {
+            background-color: #781719;
+            color: white;
+            text-align: center;
+            padding: 25px;
+        }
+
+        footer p {
+            margin: 5px;
+            font-size: 14px;
+        }
+
+        /* ================= RESPONSIVE ================= */
+
+        @media (max-width: 800px) {
+
+            nav {
+                padding: 0 20px;
+            }
+
+            nav ul {
+                gap: 10px;
+            }
+
+            nav ul li a {
+                font-size: 11px;
+            }
+
+            .home-content h1 {
+                font-size: 42px;
+            }
+
+            .menu-container {
+                grid-template-columns: 1fr;
+            }
+
+            .profile-container {
+                flex-direction: column;
+                text-align: center;
+            }
+
+            .gallery-container {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-container {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- ================= NAVIGATION ================= -->
+
+    <nav>
+
+        <div class="logo">
+            Michael <span>Chinese Food</span>
+        </div>
+
+        <ul>
+            <li><a href="#home">Home</a></li>
+            <li><a href="#profil">Profil</a></li>
+            <li><a href="#about">About</a></li>
+            <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+            <li><a href="#location">Location</a></li>
+        </ul>
+
+    </nav>
+
+
+    <!-- ================= HOME ================= -->
+
+    <section id="home">
+
+        <div class="home-content">
+
+            <div class="small-title">
+                WELCOME TO
+            </div>
+
+            <h1>
+                Michael <span>Chinese Food</span>
+            </h1>
+
+            <p>
+                Nikmati berbagai hidangan Chinese Food dengan
+                cita rasa yang lezat, autentik, dan cocok dinikmati
+                bersama keluarga maupun teman.
+            </p>
+
+            <a href="#menu" class="home-button">
+                LIHAT MENU
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= MENU ================= -->
+
+    <section class="menu-section" id="menu">
+
+        <div class="section-title">
+
+            <div class="line"></div>
+
+            <h2>Daftar Harga Menu Restoran</h2>
+
+            <p>
+                Pilihan makanan Chinese Food favorit kami
+            </p>
+
+        </div>
+
+
+        <div class="menu-container">
+
+            <!-- MENU 1 -->
+
+            <div class="menu-card">
+
+                <img
+                    class="menu-image"
+                    src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80"
+                    alt="Nasi Goreng Chinese">
+
+                <h3>Nasi Goreng Chinese</h3>
+
+                <p>
+                    Nasi goreng dengan bumbu khas Chinese
+                    yang gurih dan lezat.
+                </p>
+
+                <div class="price">
+                    &dollar;25.000
+                </div>
+
+            </div>
+
+
+            <!-- MENU 2 -->
+
+            <div class="menu-card">
+
+                <img
+                    class="menu-image"
+                    src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=700&q=80"
+                    alt="Capcay Goreng">
+
+                <h3>Capcay Goreng</h3>
+
+                <p>
+                    Sayuran segar yang dimasak dengan
+                    bumbu Chinese yang khas.
+                </p>
+
+                <div class="price">
+                    &dollar;28.000
+                </div>
+
+            </div>
+
+
+            <!-- MENU 3 -->
+
+            <div class="menu-card">
+
+                <img
+                    class="menu-image"
+                    src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=700&q=80"
+                    alt="Dimsum Ayam">
+
+                <h3>Dimsum Ayam</h3>
+
+                <p>
+                    Dimsum ayam lembut dengan rasa gurih
+                    yang cocok sebagai makanan pembuka.
+                </p>
+
+                <div class="price">
+                    &dollar;22.000
+                </div>
+
+            </div>
+
+
+            <!-- MENU 4 -->
+
+            <div class="menu-card">
+
+                <img
+                    class="menu-image"
+                    src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=700&q=80"
+                    alt="Kwetiau Goreng">
+
+                <h3>Kwetiau Goreng</h3>
+
+                <p>
+                    Kwetiau lembut dengan sayuran dan
+                    bumbu khas Chinese Food.
+                </p>
+
+                <div class="price">
+                    &dollar;27.000
+                </div>
+
+            </div>
+
+
+            <!-- MENU 5 -->
+
+            <div class="menu-card">
+
+                <img
+                    class="menu-image"
+                    src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=80"
+                    alt="Ayam Kung Pao">
+
+                <h3>Ayam Kung Pao</h3>
+
+                <p>
+                    Ayam dengan saus khas Kung Pao
+                    yang gurih dan sedikit pedas.
+                </p>
+
+                <div class="price">
+                    &dollar;32.000
+                </div>
+
+            </div>
+
+
+            <!-- MENU 6 -->
+
+            <div class="menu-card">
+
+                <img
+                    class="menu-image"
+                    src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80"
+                    alt="Mie Chinese">
+
+                <h3>Mie Chinese</h3>
+
+                <p>
+                    Mie dengan topping pilihan dan
+                    bumbu khas Chinese Food.
+                </p>
+
+                <div class="price">
+                    &dollar;26.000
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= PROFIL ================= -->
+
+    <section id="profil">
+
+        <div class="section-title">
+
+            <div class="line"></div>
+
+            <h2>Profil</h2>
+
+            <p>
+                Profil pemilik Michael Chinese Food
+            </p>
+
+        </div>
+
+
+        <div class="profile-container">
+
+            <img
+                class="profile-photo"
+                src="Michael.png"
+                alt="Foto Michael Alfandigo">
+
+            <div class="profile-info">
+
+                <h2>Michael Alfandigo</h2>
+
+                <h3>Profil Pemilik</h3>
+
+                <p>
+                    <strong>Nama:</strong>
+                    Michael Alfandigo
+                </p>
+
+                <p>
+                    <strong>Tempat, Tanggal Lahir:</strong>
+                    Tangerang, 15/05/06
+                </p>
+
+                <p>
+                    Saya merupakan pemilik dari Michael Chinese Food.
+                    Website ini dibuat untuk memperkenalkan restoran,
+                    menu makanan, serta informasi mengenai Michael
+                    Chinese Food kepada pelanggan.
+                </p>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= ABOUT ================= -->
+
+    <section id="about">
+
+        <div class="about-container">
+
+            <h2>About Michael Chinese Food</h2>
+
+            <p>
+                Michael Chinese Food merupakan restoran yang
+                menyediakan berbagai macam hidangan Chinese Food
+                dengan cita rasa yang lezat dan menarik.
+            </p>
+
+            <p>
+                Restoran ini dibuat dengan tujuan untuk menghadirkan
+                makanan Chinese yang dapat dinikmati oleh berbagai
+                kalangan, baik untuk makan bersama keluarga,
+                teman, maupun untuk menikmati makanan secara pribadi.
+            </p>
+
+            <p>
+                Dengan mengutamakan rasa, kualitas makanan, dan
+                pelayanan yang baik, Michael Chinese Food terus
+                berusaha memberikan pengalaman makan yang nyaman
+                bagi setiap pelanggan.
+            </p>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= GALLERY ================= -->
+
+    <section id="gallery">
+
+        <div class="section-title">
+
+            <div class="line"></div>
+
+            <h2>Gallery</h2>
+
+            <p>
+                Beberapa hidangan Michael Chinese Food
+            </p>
+
+        </div>
+
+
+        <div class="gallery-container">
+
+
+            <img
+                src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=700&q=80"
+                alt="Chinese Food">
+
+            <img
+                src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80"
+                alt="Chinese Food">
+
+            <img
+                src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=700&q=80"
+                alt="Chinese Food">
+
+            <img
+                src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=80"
+                alt="Chinese Food">
+
+            <img
+                src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80"
+                alt="Chinese Food">
+
+            <img
+                src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=700&q=80"
+                alt="Chinese Food">
+
+            <!-- VIDEO -->
+    <div class="gallery-video">
+        <video controls>
+            <source src="Masak.mp4" type="video/mp4">
+            Browser Anda tidak mendukung video.
+        </video>
+    </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= KONTAK ================= -->
+
+    <section id="kontak">
+
+        <div class="section-title">
+
+            <div class="line"></div>
+
+            <h2>Kontak</h2>
+
+            <p>
+                Hubungi Michael Chinese Food
+            </p>
+
+        </div>
+
+
+        <div class="contact-container">
+
+            <!-- WHATSAPP -->
+
+            <div class="contact-card">
+
+                <h3>WhatsApp</h3>
+
+                <p>
+                    Hubungi kami melalui WhatsApp
+                </p>
+
+                <br>
+
+                <a
+                    href="https://wa.me/6285286497481"
+                    target="_blank">
+                    085286497481
+                </a>
+
+            </div>
+
+
+            <!-- EMAIL -->
+
+            <div class="contact-card">
+
+                <h3>Email</h3>
+
+                <p>
+                    Kirim pertanyaan melalui email
+                </p>
+
+                <br>
+
+                <a
+                    href="mailto:miuvox979@gmail.com">
+                    miuvox979@gmail.com
+                </a>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= LOCATION ================= -->
+
+    <section id="location">
+
+        <div class="location-box">
+
+            <h2>Location</h2>
+
+            <p>
+                Michael Chinese Food
+            </p>
+
+            <p>
+                Jl. Jambu Buaran Indah, Tangerang
+            </p>
+
+            <p>
+                Lokasi restoran terletak di tombol
+                pada bagian bawah ini.
+            </p>
+
+            <!--
+                NANTI GANTI # DENGAN LINK GOOGLE MAPS
+                CONTOH:
+                href="https://maps.google.com/..."
+            -->
+
+            <a
+                href="https://ul.waze.com/ul?place=ChIJzxiH3yH5aS4RIzIq0UNsqWY&ll=-6.18565000%2C106.65270000&navigate=yes&utm_campaign=default&utm_source=waze_website&utm_medium=lm_share_location"
+                class="location-button">
+                LIHAT LOKASI
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            &copy; 2026 Michael Chinese Food
+        </p>
+
+        <p>
+            Taste the East, Enjoy the Flavor
+        </p>
+
+    </footer>
+
+</body>
+</html>
