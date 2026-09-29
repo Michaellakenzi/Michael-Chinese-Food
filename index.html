@@ -228,26 +228,26 @@
 
         /* ================= LIGHTBOX MENU ================= */
 
-        .menu-lightbox {
-    display: none;
-    position: fixed;
-    z-index: 9999;
-    inset: 0;
+                .menu-lightbox {
+            display: none;
+            position: fixed;
+            z-index: 9999;
+            inset: 0;
 
-    /* Background gelap + blur */
-    background: rgba(0, 0, 0, 0.75);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+            /* Background gelap + blur */
+            background: rgba(0, 0, 0, 0.75);
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
 
-    align-items: center;
-    justify-content: center;
+            align-items: center;
+            justify-content: center;
 
-    padding: 30px;
-        }
+            padding: 30px;
+                }
 
-        /* Foto yang diperbesar */
+                /* Foto yang diperbesar */
 
-        .menu-lightbox img {
+            .menu-lightbox img {
             max-width: 85%;
             max-height: 85vh;
 
@@ -402,7 +402,7 @@
         }
 
         .gallery-video {
-    width: 312%;
+    width: 85%;
     margin: 40px auto 0;
     background-color: #000;
     padding: 8px;
@@ -542,6 +542,70 @@
                 grid-template-columns: 1fr;
             }
         }
+
+        /* ================= PEMESANAN ================= */
+
+        #pemesanan {
+            padding: 90px 7%;
+            background-color: #fff8ed;
+        }
+
+        .pemesanan-container {
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .pemesanan-box {
+            background-color: white;
+            padding: 35px;
+            margin-bottom: 30px;
+            border-radius: 8px;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+        }
+
+        .pemesanan-box h3 {
+            color: #a51f21;
+            font-family: Georgia, serif;
+            font-size: 25px;
+            margin-bottom: 15px;
+        }
+
+        .pemesanan-box p {
+            line-height: 1.8;
+            margin-bottom: 20px;
+        }
+
+        /* Ordered List */
+
+        .langkah-pemesanan {
+            padding-left: 25px;
+        }
+
+        .langkah-pemesanan li {
+            padding: 10px;
+            margin-bottom: 8px;
+            line-height: 1.6;
+        }
+
+        /* Nested List */
+
+        .kategori-menu {
+            padding-left: 30px;
+            margin-top: 10px;
+        }
+
+        .kategori-menu li {
+            margin: 8px 0;
+        }
+
+        .kategori-menu ul {
+            margin-top: 8px;
+            padding-left: 25px;
+        }
+
+        .kategori-menu ul li {
+            color: #555;
+        }
     </style>
 </head>
 
@@ -560,6 +624,7 @@
             <li><a href="#profil">Profil</a></li>
             <li><a href="#about">About</a></li>
             <li><a href="#gallery">Gallery</a></li>
+            <li><a href="#pemesanan">Pemesanan</a></li>
             <li><a href="#kontak">Kontak</a></li>
             <li><a href="#location">Location</a></li>
         </ul>
@@ -596,165 +661,327 @@
     </section>
 
 
-    <!-- ================= MENU ================= -->
+   <!-- ================= DAFTAR HARGA MENU ================= -->
 
-    <section class="menu-section" id="menu">
+<section class="menu-section" id="menu">
 
-        <div class="section-title">
+    <div class="section-title">
 
-            <div class="line"></div>
+        <div class="line"></div>
 
-            <h2>Daftar Harga Menu Restoran</h2>
+        <h2>Daftar Harga Menu Restoran</h2>
+
+        <p>
+            Nikmati berbagai pilihan makanan, minuman, dan dessert
+            khas Michael Chinese Food
+        </p>
+
+    </div>
+
+
+    <!-- ================= MAKANAN ================= -->
+
+    <h2 style="text-align:center; color:#a51f21; margin-bottom:25px;">
+        🍜 Makanan
+    </h2>
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+
+            <img
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80"
+                alt="Nasi Goreng Chinese">
+
+            <h3>Nasi Goreng Chinese</h3>
 
             <p>
-                Pilihan makanan Chinese Food favorit kami
+                Nasi goreng dengan bumbu khas Chinese
+                yang gurih dan lezat.
             </p>
 
-        </div>
-
-
-        <div class="menu-container">
-
-            <!-- MENU 1 -->
-
-            <div class="menu-card">
-
-                <img
-                    class="menu-image"
-                    src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80"
-                    alt="Nasi Goreng Chinese">
-
-                <h3>Nasi Goreng Chinese</h3>
-
-                <p>
-                    Nasi goreng dengan bumbu khas Chinese
-                    yang gurih dan lezat.
-                </p>
-
-                <div class="price">
-                    &dollar;25.000
-                </div>
-
-            </div>
-
-
-            <!-- MENU 2 -->
-
-            <div class="menu-card">
-
-                <img
-                    class="menu-image"
-                    src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=700&q=80"
-                    alt="Capcay Goreng">
-
-                <h3>Capcay Goreng</h3>
-
-                <p>
-                    Sayuran segar yang dimasak dengan
-                    bumbu Chinese yang khas.
-                </p>
-
-                <div class="price">
-                    &dollar;28.000
-                </div>
-
-            </div>
-
-
-            <!-- MENU 3 -->
-
-            <div class="menu-card">
-
-                <img
-                    class="menu-image"
-                    src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=700&q=80"
-                    alt="Dimsum Ayam">
-
-                <h3>Dimsum Ayam</h3>
-
-                <p>
-                    Dimsum ayam lembut dengan rasa gurih
-                    yang cocok sebagai makanan pembuka.
-                </p>
-
-                <div class="price">
-                    &dollar;22.000
-                </div>
-
-            </div>
-
-
-            <!-- MENU 4 -->
-
-            <div class="menu-card">
-
-                <img
-                    class="menu-image"
-                    src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=700&q=80"
-                    alt="Kwetiau Goreng">
-
-                <h3>Kwetiau Goreng</h3>
-
-                <p>
-                    Kwetiau lembut dengan sayuran dan
-                    bumbu khas Chinese Food.
-                </p>
-
-                <div class="price">
-                    &dollar;27.000
-                </div>
-
-            </div>
-
-
-            <!-- MENU 5 -->
-
-            <div class="menu-card">
-
-                <img
-                    class="menu-image"
-                    src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=80"
-                    alt="Ayam Kung Pao">
-
-                <h3>Ayam Kung Pao</h3>
-
-                <p>
-                    Ayam dengan saus khas Kung Pao
-                    yang gurih dan sedikit pedas.
-                </p>
-
-                <div class="price">
-                    &dollar;32.000
-                </div>
-
-            </div>
-
-
-            <!-- MENU 6 -->
-
-            <div class="menu-card">
-
-                <img
-                    class="menu-image"
-                    src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80"
-                    alt="Mie Chinese">
-
-                <h3>Mie Chinese</h3>
-
-                <p>
-                    Mie dengan topping pilihan dan
-                    bumbu khas Chinese Food.
-                </p>
-
-                <div class="price">
-                    &dollar;26.000
-                </div>
-
+            <div class="price">
+                &dollar;25.000
             </div>
 
         </div>
 
-    </section>
+
+        <div class="menu-card">
+
+            <img
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=700&q=80"
+                alt="Capcay Goreng">
+
+            <h3>Capcay Goreng</h3>
+
+            <p>
+                Sayuran segar yang dimasak dengan
+                bumbu Chinese yang khas.
+            </p>
+
+            <div class="price">
+                &dollar;28.000
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=80"
+                alt="Ayam Kung Pao">
+
+            <h3>Ayam Kung Pao</h3>
+
+            <p>
+                Ayam dengan saus khas Kung Pao
+                yang gurih dan lezat.
+            </p>
+
+            <div class="price">
+                &dollar;32.000
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=700&q=80"
+                alt="Kwetiau Goreng">
+
+            <h3>Kwetiau Goreng</h3>
+
+            <p>
+                Kwetiau lembut dengan sayuran dan
+                bumbu khas Chinese Food.
+            </p>
+
+            <div class="price">
+                &dollar;27.000
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=700&q=80"
+                alt="Dimsum Ayam">
+
+            <h3>Dimsum Ayam</h3>
+
+            <p>
+                Dimsum ayam lembut dengan rasa gurih
+                yang cocok sebagai makanan pembuka.
+            </p>
+
+            <div class="price">
+                &dollar;22.000
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80"
+                alt="Mie Chinese">
+
+            <h3>Mie Chinese</h3>
+
+            <p>
+                Mie dengan topping pilihan dan
+                bumbu khas Chinese Food.
+            </p>
+
+            <div class="price">
+                &dollar;26.000
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= MINUMAN ================= -->
+
+    <h2 style="text-align:center; color:#a51f21; margin:60px 0 25px;">
+        🥤 Minuman
+    </h2>
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+
+            <img
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=700&q=80"
+                alt="Es Teh Manis">
+
+            <h3>Es Teh Manis</h3>
+
+            <p>
+                Teh manis dingin yang segar dan cocok
+                menemani hidangan.
+            </p>
+
+            <div class="price">
+                &dollar;8.000
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&w=700&q=80"
+                alt="Es Jeruk">
+
+            <h3>Es Jeruk</h3>
+
+            <p>
+                Minuman jeruk segar dengan rasa
+                manis dan menyegarkan.
+            </p>
+
+            <div class="price">
+                &dollar;10.000
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img 
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1600271886742-f049cd451bba?auto=format&fit=crop&w=700&q=80"
+                alt="Jus Mangga">
+
+            <h3>Jus Mangga</h3>
+
+            <p>
+                Jus mangga segar dengan rasa manis
+                dan tekstur yang lembut.
+            </p>
+
+            <div class="price">
+                &dollar;15.000
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img 
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1544787219-7f47ccb76574?auto=format&fit=crop&w=700&q=80"
+                alt="Susu Cokelat Panas">
+
+            <h3>Susu Cokelat Panas</h3>
+
+            <p>
+                Susu Cokelat Panas sederhana yang cocok
+                dinikmati bersama makanan.
+            </p>
+
+            <div class="price">
+                &dollar;7.000
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <!-- ================= DESSERT ================= -->
+
+    <h2 style="text-align:center; color:#a51f21; margin:60px 0 25px;">
+        🍨 Dessert
+    </h2>
+
+    <div class="menu-container">
+
+        <div class="menu-card">
+
+            <img
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1497034825429-c343d7c6a68f?auto=format&fit=crop&w=700&q=80"
+                alt="Es Krim">
+
+            <h3>Es Krim</h3>
+
+            <p>
+                Es krim lembut dan manis sebagai
+                hidangan penutup.
+            </p>
+
+            <div class="price">
+                &dollar;12.000
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img 
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80"
+                alt="Puding Strawberry">
+
+            <h3>Puding Strawberry</h3>
+
+            <p>
+                Puding lembut dengan rasa Strawberry
+                yang segar dan manis.
+            </p>
+
+            <div class="price">
+                &dollar;15.000
+            </div>
+
+        </div>
+
+
+        <div class="menu-card">
+
+            <img
+                class="menu-image"
+                src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?auto=format&fit=crop&w=700&q=80"
+                alt="Cookies">
+
+            <h3>Cookies</h3>
+
+            <p>
+                Cookies renyah dan manis sebagai
+                pilihan dessert.
+            </p>
+
+            <div class="price">
+                &dollar;10.000
+            </div>
+
+        </div>
+
+    </div>
+
+</section>
 
 
     <!-- ================= PROFIL ================= -->
@@ -778,7 +1005,7 @@
 
             <img
                 class="profile-photo"
-                src="michael.png"
+                src="Michael.png"
                 alt="Foto Michael Alfandigo">
 
             <div class="profile-info">
@@ -888,6 +1115,8 @@
                 src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=700&q=80"
                 alt="Chinese Food">
 
+    </div>
+
             <!-- VIDEO -->
     <div class="gallery-video">
         <video controls>
@@ -900,6 +1129,132 @@
 
     </section>
 
+    <!-- ================= PEMESANAN ================= -->
+
+<section id="pemesanan">
+
+    <div class="section-title">
+
+        <div class="line"></div>
+
+        <h2>Pemesanan</h2>
+
+        <p>
+            Informasi kategori menu dan langkah pemesanan
+            di Michael Chinese Food
+        </p>
+
+    </div>
+
+
+    <div class="pemesanan-container">
+
+        <!-- NESTED LIST -->
+
+        <div class="pemesanan-box">
+
+            <h3>Kategori Menu</h3>
+
+            <p>
+                Michael Chinese Food menyediakan berbagai pilihan
+                makanan dan minuman. Berikut beberapa kategori menu
+                yang dapat dipilih oleh pelanggan:
+            </p>
+
+            <ol class="kategori-menu">
+
+                <li>
+                    <strong>Makanan</strong>
+
+                    <ul>
+                        <li>Nasi Goreng Chinese</li>
+                        <li>Capcay Goreng</li>
+                        <li>Ayam Kung Pao</li>
+                        <li>Kwetiau Goreng</li>
+                        <li>Dimsum Ayam</li>
+                    </ul>
+
+                </li>
+
+
+                <li>
+                    <strong>Minuman</strong>
+
+                    <ul>
+                        <li>Es Teh Manis</li>
+                        <li>Es Jeruk</li>
+                        <li>Jus Mangga</li>
+                    </ul>
+
+                </li>
+
+
+                <li>
+                    <strong>Dessert</strong>
+
+                    <ul>
+                        <li>Puding Strawberry</li>
+                        <li>Es Krim</li>
+                        <li>Cookies</li>
+                    </ul>
+
+                </li>
+
+            </ol>
+
+        </div>
+
+
+        <!-- ORDERED LIST PEMESANAN -->
+
+        <div class="pemesanan-box">
+
+            <h3>Langkah-Langkah Pemesanan</h3>
+
+            <p>
+                Untuk melakukan pemesanan di Michael Chinese Food,
+                pelanggan dapat mengikuti langkah-langkah berikut:
+            </p>
+
+            <ol class="langkah-pemesanan">
+
+                <li>
+                    Pilih makanan, minuman, atau dessert yang
+                    ingin dipesan.
+                </li>
+
+                <li>
+                    Tentukan jumlah makanan atau minuman yang
+                    ingin dibeli.
+                </li>
+
+                <li>
+                    Sampaikan pesanan kepada pihak restoran
+                    melalui kasir atau kontak yang tersedia.
+                </li>
+
+                <li>
+                    Periksa kembali pesanan dan total harga
+                    sebelum melakukan pembayaran.
+                </li>
+
+                <li>
+                    Lakukan pembayaran sesuai dengan total
+                    harga pesanan.
+                </li>
+
+                <li>
+                    Tunggu pesanan disiapkan oleh restoran
+                    dan nikmati hidangan Michael Chinese Food.
+                </li>
+
+            </ol>
+
+        </div>
+
+    </div>
+
+</section>
 
     <!-- ================= KONTAK ================= -->
 
