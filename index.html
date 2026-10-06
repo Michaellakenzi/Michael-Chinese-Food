@@ -19,7 +19,855 @@
             background-color: #f8ead5;
             color: #333;
         }
+        
+        /* ==================================================
+   GLOBAL CHINESE FOOD THEME
+================================================== */
 
+section {
+    position: relative;
+    overflow: hidden;
+}
+
+/* Isi section selalu berada di atas dekorasi */
+section > * {
+    position: relative;
+    z-index: 3;
+}
+
+
+/* =========================================================
+   HOME - CHINESE RESTAURANT
+========================================================= */
+
+#home {
+    min-height: 720px;
+    margin-top: 65px;
+    position: relative;
+    overflow: hidden;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    background:
+        linear-gradient(
+            rgba(105, 12, 15, 0.68),
+            rgba(105, 12, 15, 0.68)
+        ),
+        url("https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* =========================================================
+   VIDEO BACKGROUND
+========================================================= */
+
+.home-video {
+    position: absolute;
+
+    top: 0;
+    left: 0;
+
+    width: 100%;
+    height: 100%;
+
+    object-fit: cover;
+
+    z-index: 0;
+
+    filter: brightness(0.65);
+}
+
+
+/* Lapisan merah di atas video */
+
+.home-overlay {
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(100, 10, 15, 0.88),
+            rgba(130, 15, 18, 0.58),
+            rgba(80, 5, 8, 0.72)
+        );
+
+    z-index: 1;
+}
+
+
+/* =========================================================
+   PATTERN CHINESE
+========================================================= */
+
+.home-pattern {
+    position: absolute;
+
+    inset: 0;
+
+    z-index: 2;
+
+    pointer-events: none;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(245,217,166,0.18) 2px,
+            transparent 3px
+        );
+
+    background-size: 40px 40px;
+
+    opacity: 0.35;
+}
+
+
+/* =========================================================
+   ISI HOME
+========================================================= */
+
+.home-content {
+    position: relative;
+
+    z-index: 10;
+
+    width: 90%;
+    max-width: 1100px;
+
+    margin: auto;
+
+    text-align: center;
+
+    color: white;
+}
+
+
+/* Garis dekorasi */
+
+.home-decoration-line {
+    width: 80px;
+    height: 4px;
+
+    background: #f5d9a6;
+
+    margin: 0 auto 25px;
+
+    border-radius: 10px;
+}
+
+
+/* WELCOME */
+
+.home-content .small-title {
+    font-size: 16px;
+
+    letter-spacing: 6px;
+
+    margin-bottom: 18px;
+
+    color: #f5d9a6;
+
+    font-weight: bold;
+}
+
+
+/* Nama restoran */
+
+.home-content h1 {
+    font-family: Georgia, serif;
+
+    font-size: 70px;
+
+    line-height: 1.1;
+
+    margin: 0 0 20px;
+
+    text-shadow:
+        0 5px 20px rgba(0,0,0,0.35);
+}
+
+
+/* Chinese Food */
+
+.home-content h1 span {
+    color: #f5d9a6;
+}
+
+
+/* Deskripsi */
+
+.home-content p {
+    font-size: 18px;
+
+    line-height: 1.8;
+
+    max-width: 700px;
+
+    margin: 0 auto;
+
+    color: #fff8ed;
+}
+
+
+/* Tombol */
+
+.home-button {
+    display: inline-block;
+
+    margin-top: 35px;
+
+    padding: 15px 35px;
+
+    background-color: #f5d9a6;
+
+    color: #8e1b1d;
+
+    text-decoration: none;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+
+    border-radius: 4px;
+
+    transition: 0.3s;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.25);
+}
+
+
+.home-button:hover {
+    background-color: white;
+
+    transform: translateY(-5px);
+
+    box-shadow:
+        0 12px 30px rgba(0,0,0,0.35);
+}
+
+
+/* =========================================================
+   LAMPION
+========================================================= */
+
+.home-lantern {
+    position: absolute;
+
+    z-index: 5;
+
+    width: 85px;
+
+    height: 150px;
+
+    pointer-events: none;
+
+    transform-origin: top center;
+
+    animation: lanternSwing 4s ease-in-out infinite;
+}
+
+
+/* Lampion kiri */
+
+.home-lantern.left {
+    top: -5px;
+    left: 5%;
+
+    animation-delay: -1s;
+}
+
+
+/* Lampion kanan */
+
+.home-lantern.right {
+    top: 15px;
+    right: 5%;
+
+    animation-delay: -2s;
+}
+
+
+/* Lampion tengah kecil */
+
+.home-lantern.center {
+    top: -15px;
+    left: 50%;
+
+    width: 55px;
+    height: 100px;
+
+    animation-duration: 5s;
+    animation-delay: -3s;
+}
+
+
+/* Animasi ayunan */
+
+@keyframes lanternSwing {
+
+    0% {
+        transform: rotate(-5deg);
+    }
+
+    50% {
+        transform: rotate(5deg);
+    }
+
+    100% {
+        transform: rotate(-5deg);
+    }
+
+}
+
+
+/* =========================================================
+   HIASAN SAMPING
+========================================================= */
+
+.home-circle {
+    position: absolute;
+
+    z-index: 3;
+
+    width: 450px;
+    height: 450px;
+
+    border: 2px solid rgba(245,217,166,0.18);
+
+    border-radius: 50%;
+
+    pointer-events: none;
+}
+
+
+.home-circle.left {
+    left: -280px;
+    bottom: -200px;
+}
+
+
+.home-circle.right {
+    right: -280px;
+    bottom: -180px;
+}
+
+
+/* =========================================================
+   ORNAMEN GOLD
+========================================================= */
+
+.home-gold {
+    position: absolute;
+
+    z-index: 4;
+
+    width: 120px;
+    height: 120px;
+
+    border: 2px solid rgba(245,217,166,0.35);
+
+    transform: rotate(45deg);
+
+    opacity: 0.4;
+
+    pointer-events: none;
+}
+
+
+.home-gold.left {
+    left: 8%;
+    bottom: 10%;
+}
+
+
+.home-gold.right {
+    right: 8%;
+    bottom: 15%;
+}
+
+
+/* =========================================================
+   MOBILE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    #home {
+        min-height: 650px;
+    }
+
+    .home-content h1 {
+        font-size: 43px;
+    }
+
+    .home-content p {
+        font-size: 15px;
+    }
+
+    .home-lantern {
+        width: 55px;
+        height: 100px;
+    }
+
+    .home-lantern.center {
+        display: none;
+    }
+
+    .home-gold {
+        width: 70px;
+        height: 70px;
+    }
+
+}
+
+
+/* ==================================================
+   MENU - BACKGROUND MAKANAN
+================================================== */
+
+#menu {
+    position: relative;
+    overflow: hidden;
+
+    background-color: #fff7eb;
+
+    background-image:
+        linear-gradient(
+            rgba(255,247,235,0.93),
+            rgba(255,247,235,0.93)
+        ),
+        url("https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+/* Ornamen lingkaran China */
+
+#menu::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -250px;
+    top: 100px;
+
+    border: 35px solid rgba(165,31,33,0.06);
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+#menu::after {
+    content: "";
+
+    position: absolute;
+
+    width: 300px;
+    height: 300px;
+
+    left: -150px;
+    bottom: 50px;
+
+    border: 20px solid rgba(197,139,58,0.08);
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+
+/* ==================================================
+   DAFTAR HARGA - PATTERN CHINA
+================================================== */
+
+#daftar-harga {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(248,234,213,0.94),
+            rgba(248,234,213,0.94)
+        ),
+        url("https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Pattern geometris */
+
+#daftar-harga::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    right: -180px;
+    top: 80px;
+
+    border: 5px solid rgba(165,31,33,0.08);
+
+    transform: rotate(45deg);
+
+    z-index: 1;
+}
+
+#daftar-harga::after {
+    content: "";
+
+    position: absolute;
+
+    width: 250px;
+    height: 250px;
+
+    left: -100px;
+    bottom: 50px;
+
+    border: 4px solid rgba(197,139,58,0.12);
+
+    transform: rotate(45deg);
+
+    z-index: 1;
+}
+
+
+/* ==================================================
+   PROFIL - BACKGROUND MAKANAN
+================================================== */
+
+#profil {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(248,234,213,0.90),
+            rgba(248,234,213,0.90)
+        ),
+        url("https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Ornamen bulat */
+
+#profil::before {
+    content: "";
+
+    position: absolute;
+
+    width: 600px;
+    height: 600px;
+
+    right: -300px;
+    top: 50px;
+
+    border: 45px solid rgba(165,31,33,0.06);
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+#profil::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    left: -180px;
+    bottom: 30px;
+
+    border: 30px solid rgba(197,139,58,0.07);
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+
+/* ==================================================
+   ABOUT - MERAH CHINESE STYLE
+================================================== */
+
+#about {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(125,20,22,0.92),
+            rgba(125,20,22,0.92)
+        ),
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+
+    color: white;
+}
+
+
+/* Pattern emas */
+
+#about::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background-image:
+        radial-gradient(
+            circle,
+            rgba(245,217,166,0.25) 2px,
+            transparent 3px
+        );
+
+    background-size: 40px 40px;
+
+    opacity: 0.25;
+
+    z-index: 1;
+}
+
+
+/* Lingkaran ornamen */
+
+#about::after {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    right: -250px;
+    top: -100px;
+
+    border: 30px solid rgba(245,217,166,0.08);
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+
+/* ==================================================
+   GALLERY - BACKGROUND FOTO MAKANAN
+================================================== */
+
+#gallery {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(248,234,213,0.91),
+            rgba(248,234,213,0.91)
+        ),
+        url("https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Pattern */
+
+#gallery::before {
+    content: "";
+
+    position: absolute;
+
+    width: 500px;
+    height: 500px;
+
+    left: -250px;
+    top: 100px;
+
+    border: 35px solid rgba(165,31,33,0.06);
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+#gallery::after {
+    content: "";
+
+    position: absolute;
+
+    width: 350px;
+    height: 350px;
+
+    right: -170px;
+    bottom: 80px;
+
+    border: 25px solid rgba(197,139,58,0.08);
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+
+/* ==================================================
+   PEMESANAN - CREAM + CHINESE PATTERN
+================================================== */
+
+#pemesanan {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(255,248,237,0.92),
+            rgba(255,248,237,0.92)
+        ),
+        url("https://images.unsplash.com/photo-1547592180-85f173990554?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Pattern diagonal */
+
+#pemesanan::before {
+    content: "";
+
+    position: absolute;
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 25px,
+            rgba(165,31,33,0.025) 26px,
+            rgba(165,31,33,0.025) 28px
+        );
+
+    z-index: 1;
+}
+
+/* ==================================================
+   LOCATION - CHINESE RESTAURANT STYLE
+================================================== */
+
+#location {
+    position: relative;
+    overflow: hidden;
+
+    background:
+        linear-gradient(
+            rgba(248,234,213,0.92),
+            rgba(248,234,213,0.92)
+        ),
+        url("https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=1800&q=85");
+
+    background-size: cover;
+    background-position: center;
+}
+
+
+/* Ornamen lingkaran */
+
+#location::before {
+    content: "";
+
+    position: absolute;
+
+    width: 450px;
+    height: 450px;
+
+    left: -220px;
+    top: 50px;
+
+    border: 35px solid rgba(165,31,33,0.06);
+
+    border-radius: 50%;
+
+    z-index: 1;
+}
+
+
+/* ==================================================
+   LAMPION UNTUK SELURUH WEBSITE
+================================================== */
+
+.chinese-decoration {
+    position: absolute;
+
+    width: 100px;
+    height: 160px;
+
+    opacity: 0.12;
+
+    z-index: 2;
+
+    pointer-events: none;
+}
+
+.chinese-decoration svg {
+    width: 100%;
+    height: 100%;
+}
+
+
+/* Posisi lampion */
+
+.lantern-decoration-left {
+    top: 10px;
+    left: 20px;
+}
+
+.lantern-decoration-right {
+    top: 10px;
+    right: 20px;
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 800px) {
+
+    .chinese-decoration {
+        width: 60px;
+        height: 100px;
+    }
+
+    .lantern-decoration-left {
+        left: 5px;
+    }
+
+    .lantern-decoration-right {
+        right: 5px;
+    }
+
+}
         /* ================= NAVBAR ================= */
 
         nav {
@@ -654,6 +1502,450 @@
         .kategori-menu ul li {
             color: #555;
         }
+
+        /* =========================================================
+   SISTEM PEMESANAN
+========================================================= */
+
+#pemesanan {
+    padding: 100px 7%;
+    background:
+        linear-gradient(
+            rgba(255,248,237,0.95),
+            rgba(255,248,237,0.95)
+        ),
+        url("https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=1800&q=80");
+
+    background-size: cover;
+    background-position: center;
+}
+
+.order-container {
+    max-width: 1150px;
+    margin: auto;
+}
+
+
+/* JUDUL */
+
+.order-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.order-title h2 {
+    color: #a51f21;
+    font-family: Georgia, serif;
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.order-title p {
+    color: #666;
+}
+
+
+/* =========================================================
+   MENU PEMESANAN
+========================================================= */
+
+.order-menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    margin-bottom: 45px;
+}
+
+.order-card {
+    background: white;
+    border-radius: 10px;
+    overflow: hidden;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.12);
+
+    transition: 0.3s;
+}
+
+.order-card:hover {
+    transform: translateY(-6px);
+}
+
+.order-card img {
+    width: 100%;
+    height: 190px;
+    object-fit: cover;
+    display: block;
+}
+
+.order-card-content {
+    padding: 20px;
+}
+
+.order-card h3 {
+    color: #a51f21;
+    font-family: Georgia, serif;
+    margin-bottom: 8px;
+}
+
+.order-card p {
+    color: #666;
+    font-size: 14px;
+    line-height: 1.6;
+    margin-bottom: 12px;
+}
+
+.order-price {
+    color: #a51f21;
+    font-weight: bold;
+    font-size: 18px;
+    margin-bottom: 15px;
+}
+
+
+/* TOMBOL TAMBAH */
+
+.btn-add {
+    width: 100%;
+    border: none;
+
+    background: #a51f21;
+    color: white;
+
+    padding: 12px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.btn-add:hover {
+    background: #7f1518;
+}
+
+
+/* =========================================================
+   KERANJANG
+========================================================= */
+
+.cart-box {
+    background: white;
+
+    padding: 30px;
+
+    border-radius: 10px;
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.12);
+
+    border-top: 5px solid #a51f21;
+}
+
+.cart-box h3 {
+    color: #a51f21;
+    font-family: Georgia, serif;
+    font-size: 26px;
+    margin-bottom: 20px;
+}
+
+.cart-empty {
+    color: #777;
+    text-align: center;
+    padding: 15px;
+}
+
+.cart-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    padding: 15px 0;
+
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item-name {
+    font-weight: bold;
+}
+
+.cart-item-price {
+    color: #a51f21;
+}
+
+.cart-item button {
+    background: #a51f21;
+    color: white;
+
+    border: none;
+
+    padding: 5px 10px;
+
+    border-radius: 4px;
+
+    cursor: pointer;
+}
+
+.cart-total {
+    display: flex;
+    justify-content: space-between;
+
+    margin-top: 20px;
+
+    font-size: 20px;
+    font-weight: bold;
+
+    color: #a51f21;
+}
+
+
+/* CHECKOUT */
+
+.btn-checkout {
+    width: 100%;
+
+    margin-top: 20px;
+
+    padding: 15px;
+
+    border: none;
+
+    background: #c58b3a;
+    color: white;
+
+    font-weight: bold;
+
+    font-size: 16px;
+
+    border-radius: 5px;
+
+    cursor: pointer;
+
+    transition: 0.3s;
+}
+
+.btn-checkout:hover {
+    background: #a56f25;
+}
+
+
+/* =========================================================
+   MODAL CHECKOUT
+========================================================= */
+
+.checkout-modal {
+    display: none;
+
+    position: fixed;
+
+    inset: 0;
+
+    z-index: 9999;
+
+    background: rgba(0,0,0,0.75);
+
+    backdrop-filter: blur(8px);
+
+    align-items: center;
+    justify-content: center;
+
+    padding: 20px;
+}
+
+.checkout-content {
+    width: 100%;
+    max-width: 500px;
+
+    max-height: 90vh;
+
+    overflow-y: auto;
+
+    background: #fff8ed;
+
+    border-radius: 12px;
+
+    padding: 35px;
+
+    position: relative;
+
+    box-shadow:
+        0 15px 50px rgba(0,0,0,0.35);
+}
+
+.checkout-content h2 {
+    color: #a51f21;
+
+    font-family: Georgia, serif;
+
+    margin-bottom: 25px;
+
+    text-align: center;
+}
+
+.close-checkout {
+    position: absolute;
+
+    top: 15px;
+    right: 22px;
+
+    font-size: 30px;
+
+    color: #a51f21;
+
+    cursor: pointer;
+}
+
+
+/* FORM */
+
+.checkout-form label {
+    display: block;
+
+    margin-top: 15px;
+
+    margin-bottom: 7px;
+
+    font-weight: bold;
+
+    color: #333;
+}
+
+.checkout-form input,
+.checkout-form select {
+    width: 100%;
+
+    padding: 12px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 5px;
+
+    box-sizing: border-box;
+
+    font-size: 15px;
+}
+
+
+/* =========================================================
+   QRIS
+========================================================= */
+
+.qris-payment {
+    display: none;
+
+    text-align: center;
+
+    margin-top: 20px;
+}
+
+.qris-payment h3 {
+    color: #a51f21;
+
+    margin-bottom: 10px;
+}
+
+.qris-payment p {
+    color: #555;
+
+    line-height: 1.6;
+}
+
+.qris-image {
+    width: 100%;
+
+    max-width: 400px;
+
+    display: block;
+
+    margin: 20px auto;
+
+    border-radius: 8px;
+
+    box-shadow:
+        0 5px 20px rgba(0,0,0,0.15);
+}
+
+
+/* =========================================================
+   TIMER
+========================================================= */
+
+.payment-timer {
+    background: #a51f21;
+
+    color: white;
+
+    padding: 15px;
+
+    border-radius: 7px;
+
+    text-align: center;
+
+    margin: 20px 0;
+
+    font-size: 20px;
+
+    font-weight: bold;
+}
+
+.payment-timer span {
+    color: #f5d9a6;
+
+    font-size: 26px;
+}
+
+
+/* =========================================================
+   TOMBOL KONFIRMASI
+========================================================= */
+
+.btn-payment {
+    width: 100%;
+
+    padding: 14px;
+
+    border: none;
+
+    background: #a51f21;
+
+    color: white;
+
+    border-radius: 5px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    margin-top: 10px;
+}
+
+.btn-payment:hover {
+    background: #7f1518;
+}
+
+
+/* =========================================================
+   RESPONSIVE
+========================================================= */
+
+@media (max-width: 800px) {
+
+    .order-menu {
+        grid-template-columns: 1fr;
+    }
+
+    .checkout-content {
+        padding: 25px;
+    }
+
+    .order-title h2 {
+        font-size: 32px;
+    }
+
+}
     </style>
 </head>
 
@@ -684,31 +1976,292 @@
 
     <!-- ================= HOME ================= -->
 
-    <section id="home">
+   <section id="home">
 
-        <div class="home-content">
+    <!-- VIDEO BACKGROUND -->
+    <video class="home-video" autoplay muted loop playsinline>
+        <source src="video.mp4" type="video/mp4">
+    </video>
 
-            <div class="small-title">
-                WELCOME TO
-            </div>
+    <!-- OVERLAY MERAH -->
+    <div class="home-overlay"></div>
 
-            <h1>
-                Michael <span>Chinese Food</span>
-            </h1>
+    <!-- PATTERN -->
+    <div class="home-pattern"></div>
 
-            <p>
-                Nikmati berbagai hidangan Chinese Food dengan
-                cita rasa yang lezat, autentik, dan cocok dinikmati
-                bersama keluarga maupun teman.
-            </p>
 
-            <a href="#menu" class="home-button">
-                LIHAT MENU
-            </a>
+    <!-- =================================================
+         LAMPION KIRI
+    ================================================== -->
 
+    <div class="home-lantern left">
+
+        <svg viewBox="0 0 100 170"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <!-- Tali -->
+            <line
+                x1="50"
+                y1="0"
+                x2="50"
+                y2="20"
+                stroke="#f5d9a6"
+                stroke-width="3"
+            />
+
+            <!-- Atas -->
+            <rect
+                x="30"
+                y="17"
+                width="40"
+                height="7"
+                rx="2"
+                fill="#f5d9a6"
+            />
+
+            <!-- Badan lampion -->
+            <path
+                d="
+                M20 28
+                Q50 12 80 28
+                L73 108
+                Q50 125 27 108
+                Z"
+                fill="#b51f23"
+            />
+
+            <!-- Garis lampion -->
+            <path
+                d="
+                M28 29
+                L32 107
+                M50 22
+                L50 115
+                M72 29
+                L68 107"
+                stroke="#f5d9a6"
+                stroke-width="2"
+                fill="none"
+            />
+
+            <!-- Atas -->
+            <ellipse
+                cx="50"
+                cy="28"
+                rx="30"
+                ry="8"
+                fill="#c58b3a"
+            />
+
+            <!-- Bawah -->
+            <rect
+                x="27"
+                y="107"
+                width="46"
+                height="8"
+                rx="2"
+                fill="#c58b3a"
+            />
+
+            <!-- Tali bawah -->
+            <line
+                x1="50"
+                y1="115"
+                x2="50"
+                y2="145"
+                stroke="#f5d9a6"
+                stroke-width="3"
+            />
+
+            <!-- Rumbai -->
+            <path
+                d="M42 140 L50 158 L58 140"
+                fill="#f5d9a6"
+            />
+
+        </svg>
+
+    </div>
+
+
+    <!-- =================================================
+         LAMPION KANAN
+    ================================================== -->
+
+    <div class="home-lantern right">
+
+        <svg viewBox="0 0 100 170"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <line
+                x1="50"
+                y1="0"
+                x2="50"
+                y2="20"
+                stroke="#f5d9a6"
+                stroke-width="3"
+            />
+
+            <rect
+                x="30"
+                y="17"
+                width="40"
+                height="7"
+                rx="2"
+                fill="#f5d9a6"
+            />
+
+            <path
+                d="
+                M20 28
+                Q50 12 80 28
+                L73 108
+                Q50 125 27 108
+                Z"
+                fill="#b51f23"
+            />
+
+            <path
+                d="
+                M28 29
+                L32 107
+                M50 22
+                L50 115
+                M72 29
+                L68 107"
+                stroke="#f5d9a6"
+                stroke-width="2"
+                fill="none"
+            />
+
+            <ellipse
+                cx="50"
+                cy="28"
+                rx="30"
+                ry="8"
+                fill="#c58b3a"
+            />
+
+            <rect
+                x="27"
+                y="107"
+                width="46"
+                height="8"
+                rx="2"
+                fill="#c58b3a"
+            />
+
+            <line
+                x1="50"
+                y1="115"
+                x2="50"
+                y2="145"
+                stroke="#f5d9a6"
+                stroke-width="3"
+            />
+
+            <path
+                d="M42 140 L50 158 L58 140"
+                fill="#f5d9a6"
+            />
+
+        </svg>
+
+    </div>
+
+
+    <!-- =================================================
+         LAMPION TENGAH
+    ================================================== -->
+
+    <div class="home-lantern center">
+
+        <svg viewBox="0 0 100 170"
+             xmlns="http://www.w3.org/2000/svg">
+
+            <line
+                x1="50"
+                y1="0"
+                x2="50"
+                y2="20"
+                stroke="#f5d9a6"
+                stroke-width="3"
+            />
+
+            <path
+                d="
+                M25 28
+                Q50 15 75 28
+                L70 100
+                Q50 115 30 100
+                Z"
+                fill="#a51f21"
+            />
+
+            <ellipse
+                cx="50"
+                cy="28"
+                rx="25"
+                ry="7"
+                fill="#f5d9a6"
+            />
+
+            <line
+                x1="50"
+                y1="105"
+                x2="50"
+                y2="145"
+                stroke="#f5d9a6"
+                stroke-width="2"
+            />
+
+            <path
+                d="M43 140 L50 155 L57 140"
+                fill="#f5d9a6"
+            />
+
+        </svg>
+
+    </div>
+
+
+    <!-- ORNAMEN -->
+    <div class="home-circle left"></div>
+    <div class="home-circle right"></div>
+
+    <div class="home-gold left"></div>
+    <div class="home-gold right"></div>
+
+
+    <!-- =================================================
+         KONTEN HOME LAMA
+    ================================================== -->
+
+    <div class="home-content">
+
+        <div class="home-decoration-line"></div>
+
+        <div class="small-title">
+            WELCOME TO
         </div>
 
-    </section>
+        <h1>
+            Michael <span>Chinese Food</span>
+        </h1>
+
+        <p>
+            Nikmati berbagai hidangan Chinese Food dengan
+            cita rasa yang lezat, autentik, dan cocok dinikmati
+            bersama keluarga maupun teman.
+        </p>
+
+        <a href="#menu" class="home-button">
+            LIHAT MENU
+        </a>
+
+    </div>
+
+</section>
 
 
    <!-- ================= DAFTAR HARGA MENU ================= -->
@@ -1324,122 +2877,350 @@
 
 <section id="pemesanan">
 
-    <div class="section-title">
+    <div class="order-container">
 
-        <div class="line"></div>
+        <div class="order-title">
 
-        <h2>Pemesanan</h2>
+            <div class="line"></div>
 
-        <p>
-            Informasi kategori menu dan langkah pemesanan
-            di Michael Chinese Food
-        </p>
-
-    </div>
-
-
-    <div class="pemesanan-container">
-
-        <!-- NESTED LIST -->
-
-        <div class="pemesanan-box">
-
-            <h3>Kategori Menu</h3>
+            <h2>Pemesanan</h2>
 
             <p>
-                Michael Chinese Food menyediakan berbagai pilihan
-                makanan dan minuman. Berikut beberapa kategori menu
-                yang dapat dipilih oleh pelanggan:
+                Pilih menu favorit Anda dan lakukan pemesanan
+                dengan mudah melalui sistem pemesanan kami.
             </p>
-
-            <ol class="kategori-menu">
-
-                <li>
-                    <strong>Makanan</strong>
-
-                    <ul>
-                        <li>Nasi Goreng Chinese</li>
-                        <li>Capcay Goreng</li>
-                        <li>Ayam Kung Pao</li>
-                        <li>Kwetiau Goreng</li>
-                        <li>Dimsum Ayam</li>
-                    </ul>
-
-                </li>
-
-
-                <li>
-                    <strong>Minuman</strong>
-
-                    <ul>
-                        <li>Es Teh Manis</li>
-                        <li>Es Jeruk</li>
-                        <li>Jus Mangga</li>
-                    </ul>
-
-                </li>
-
-
-                <li>
-                    <strong>Dessert</strong>
-
-                    <ul>
-                        <li>Puding Strawberry</li>
-                        <li>Es Krim</li>
-                        <li>Cookies</li>
-                    </ul>
-
-                </li>
-
-            </ol>
 
         </div>
 
 
-        <!-- ORDERED LIST PEMESANAN -->
+        <!-- =================================================
+             MENU
+        ================================================== -->
 
-        <div class="pemesanan-box">
+        <div class="order-menu">
 
-            <h3>Langkah-Langkah Pemesanan</h3>
+            <!-- NASI GORENG -->
 
-            <p>
-                Untuk melakukan pemesanan di Michael Chinese Food,
-                pelanggan dapat mengikuti langkah-langkah berikut:
-            </p>
+            <div class="order-card">
 
-            <ol class="langkah-pemesanan">
+                <img
+                    src="https://images.unsplash.com/photo-1512058564366-18510be2db19?auto=format&fit=crop&w=700&q=80"
+                    alt="Nasi Goreng Chinese">
 
-                <li>
-                    Pilih makanan, minuman, atau dessert yang
-                    ingin dipesan.
-                </li>
+                <div class="order-card-content">
 
-                <li>
-                    Tentukan jumlah makanan atau minuman yang
-                    ingin dibeli.
-                </li>
+                    <h3>Nasi Goreng Chinese</h3>
 
-                <li>
-                    Sampaikan pesanan kepada pihak restoran
-                    melalui kasir atau kontak yang tersedia.
-                </li>
+                    <p>
+                        Nasi goreng dengan cita rasa Chinese
+                        yang gurih dan lezat.
+                    </p>
 
-                <li>
-                    Periksa kembali pesanan dan total harga
-                    sebelum melakukan pembayaran.
-                </li>
+                    <div class="order-price">
+                        &dollar;25.000
+                    </div>
 
-                <li>
-                    Lakukan pembayaran sesuai dengan total
-                    harga pesanan.
-                </li>
+                    <button
+                        class="btn-add"
+                        onclick="addToCart('Nasi Goreng Chinese', 25000)">
+                        Tambah Pesanan
+                    </button>
 
-                <li>
-                    Tunggu pesanan disiapkan oleh restoran
-                    dan nikmati hidangan Michael Chinese Food.
-                </li>
+                </div>
 
-            </ol>
+            </div>
+
+
+            <!-- CAPCAY -->
+
+            <div class="order-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1515003197210-e0cd71810b5f?auto=format&fit=crop&w=700&q=80"
+                    alt="Capcay Goreng">
+
+                <div class="order-card-content">
+
+                    <h3>Capcay Goreng</h3>
+
+                    <p>
+                        Aneka sayuran segar dengan bumbu
+                        Chinese yang nikmat.
+                    </p>
+
+                    <div class="order-price">
+                        &dollar;28.000
+                    </div>
+
+                    <button
+                        class="btn-add"
+                        onclick="addToCart('Capcay Goreng', 28000)">
+                        Tambah Pesanan
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- AYAM KUNG PAO -->
+
+            <div class="order-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?auto=format&fit=crop&w=700&q=80"
+                    alt="Ayam Kung Pao">
+
+                <div class="order-card-content">
+
+                    <h3>Ayam Kung Pao</h3>
+
+                    <p>
+                        Ayam dengan saus khas Chinese
+                        yang gurih dan sedikit pedas.
+                    </p>
+
+                    <div class="order-price">
+                        &dollar;32.000
+                    </div>
+
+                    <button
+                        class="btn-add"
+                        onclick="addToCart('Ayam Kung Pao', 32000)">
+                        Tambah Pesanan
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- KWETIAU -->
+
+            <div class="order-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1585032226651-759b368d7246?auto=format&fit=crop&w=700&q=80"
+                    alt="Kwetiau Goreng">
+
+                <div class="order-card-content">
+
+                    <h3>Kwetiau Goreng</h3>
+
+                    <p>
+                        Kwetiau goreng dengan sayuran
+                        dan bumbu khas Chinese.
+                    </p>
+
+                    <div class="order-price">
+                        &dollar;27.000
+                    </div>
+
+                    <button
+                        class="btn-add"
+                        onclick="addToCart('Kwetiau Goreng', 27000)">
+                        Tambah Pesanan
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- DIMSUM -->
+
+            <div class="order-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1563245372-f21724e3856d?auto=format&fit=crop&w=700&q=80"
+                    alt="Dimsum Ayam">
+
+                <div class="order-card-content">
+
+                    <h3>Dimsum Ayam</h3>
+
+                    <p>
+                        Dimsum ayam lembut dengan rasa
+                        yang gurih dan nikmat.
+                    </p>
+
+                    <div class="order-price">
+                        &dollar;22.000
+                    </div>
+
+                    <button
+                        class="btn-add"
+                        onclick="addToCart('Dimsum Ayam', 22000)">
+                        Tambah Pesanan
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- MIE -->
+
+            <div class="order-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1569718212165-3a8278d5f624?auto=format&fit=crop&w=700&q=80"
+                    alt="Mie Chinese">
+
+                <div class="order-card-content">
+
+                    <h3>Mie Chinese</h3>
+
+                    <p>
+                        Mie dengan bumbu Chinese dan
+                        topping yang lezat.
+                    </p>
+
+                    <div class="order-price">
+                        &dollar;26.000
+                    </div>
+
+                    <button
+                        class="btn-add"
+                        onclick="addToCart('Mie Chinese', 26000)">
+                        Tambah Pesanan
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ES TEH -->
+
+            <div class="order-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1556679343-c7306c1976bc?auto=format&fit=crop&w=700&q=80"
+                    alt="Es Teh Manis">
+
+                <div class="order-card-content">
+
+                    <h3>Es Teh Manis</h3>
+
+                    <p>
+                        Teh manis dingin yang menyegarkan.
+                    </p>
+
+                    <div class="order-price">
+                        &dollar;8.000
+                    </div>
+
+                    <button
+                        class="btn-add"
+                        onclick="addToCart('Es Teh Manis', 8000)">
+                        Tambah Pesanan
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- ES JERUK -->
+
+            <div class="order-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1621263764928-df1444c5e859?auto=format&fit=crop&w=700&q=80"
+                    alt="Es Jeruk">
+
+                <div class="order-card-content">
+
+                    <h3>Es Jeruk</h3>
+
+                    <p>
+                        Minuman jeruk dingin dengan rasa
+                        segar dan manis.
+                    </p>
+
+                    <div class="order-price">
+                        &dollar;10.000
+                    </div>
+
+                    <button
+                        class="btn-add"
+                        onclick="addToCart('Es Jeruk', 10000)">
+                        Tambah Pesanan
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <!-- PUDING Strawberry -->
+
+            <div class="order-card">
+
+                <img
+                    src="https://images.unsplash.com/photo-1488477181946-6428a0291777?auto=format&fit=crop&w=700&q=80"
+                    alt="Puding Strawberry">
+
+                <div class="order-card-content">
+
+                    <h3>Puding Mangga</h3>
+
+                    <p>
+                        Dessert lembut dengan cita rasa
+                        mangga yang manis dan segar.
+                    </p>
+
+                    <div class="order-price">
+                        &dollar;15.000
+                    </div>
+
+                    <button
+                        class="btn-add"
+                        onclick="addToCart('Puding Mangga', 15000)">
+                        Tambah Pesanan
+                    </button>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             KERANJANG
+        ================================================== -->
+
+        <div class="cart-box">
+
+            <h3>Pesanan Anda</h3>
+
+            <div id="cartItems">
+
+                <div class="cart-empty">
+                    Belum ada menu yang dipilih.
+                </div>
+
+            </div>
+
+            <div class="cart-total">
+
+                <span>Total</span>
+
+                <span id="cartTotal">
+                    &dollar;0
+                </span>
+
+            </div>
+
+            <button
+                class="btn-checkout"
+                onclick="openCheckout()">
+
+                Lanjut ke Pembayaran
+
+            </button>
 
         </div>
 
@@ -1634,6 +3415,518 @@
         }
 
     });
+
+</script>
+<!-- =====================================================
+     CHECKOUT MODAL
+====================================================== -->
+
+<div class="checkout-modal" id="checkoutModal">
+
+    <div class="checkout-content">
+
+        <span
+            class="close-checkout"
+            onclick="closeCheckout()">
+            &times;
+        </span>
+
+
+        <!-- FORM -->
+
+        <div id="checkoutForm">
+
+            <h2>Checkout Pesanan</h2>
+
+            <div class="checkout-form">
+
+                <label>
+                    Nama Pemesan
+                </label>
+
+                <input
+                    type="text"
+                    id="customerName"
+                    placeholder="Masukkan nama"
+                    required>
+
+
+                <label>
+                    Metode Pembayaran
+                </label>
+
+                <select id="paymentMethod">
+
+                    <option value="qris">
+                        QRIS
+                    </option>
+
+                </select>
+
+
+                <button
+                    class="btn-payment"
+                    onclick="startPayment()">
+
+                    Tampilkan QRIS
+
+                </button>
+
+            </div>
+
+        </div>
+
+
+        <!-- =================================================
+             PEMBAYARAN QRIS
+        ================================================== -->
+
+        <div
+            class="qris-payment"
+            id="qrisPayment">
+
+            <h2>Pembayaran QRIS</h2>
+
+            <p>
+                Silakan scan QRIS di bawah menggunakan
+                aplikasi pembayaran yang mendukung QRIS.
+            </p>
+
+
+            <!-- TIMER -->
+
+            <div class="payment-timer">
+
+                Selesaikan pembayaran dalam:
+
+                <br>
+
+                <span id="paymentTimer">
+                    10:00
+                </span>
+
+            </div>
+
+
+            <!-- QRIS -->
+
+            <img
+                src="qris.png"
+                class="qris-image"
+                alt="QRIS Michael Store">
+
+
+            <p>
+                Setelah melakukan pembayaran,
+                pastikan pembayaran berhasil sebelum
+                waktu habis.
+            </p>
+
+
+            <button
+                class="btn-payment"
+                onclick="finishPayment()">
+
+                Saya Sudah Membayar
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+<script>
+
+/* =========================================================
+   DATA KERANJANG
+========================================================= */
+
+let cart = [];
+
+let paymentTimer;
+
+let timeLeft = 600;
+
+
+/* =========================================================
+   TAMBAH PESANAN
+========================================================= */
+
+function addToCart(name, price) {
+
+    const existingItem = cart.find(
+        item => item.name === name
+    );
+
+
+    if (existingItem) {
+
+        existingItem.quantity++;
+
+    } else {
+
+        cart.push({
+            name: name,
+            price: price,
+            quantity: 1
+        });
+
+    }
+
+
+    updateCart();
+
+
+    alert(
+        name + " berhasil ditambahkan ke pesanan."
+    );
+}
+
+
+/* =========================================================
+   TAMPILKAN KERANJANG
+========================================================= */
+
+function updateCart() {
+
+    const cartItems =
+        document.getElementById("cartItems");
+
+    const cartTotal =
+        document.getElementById("cartTotal");
+
+
+    if (cart.length === 0) {
+
+        cartItems.innerHTML =
+            '<div class="cart-empty">' +
+            'Belum ada menu yang dipilih.' +
+            '</div>';
+
+        cartTotal.innerHTML = "&dollar;0";
+
+        return;
+    }
+
+
+    let html = "";
+
+    let total = 0;
+
+
+    cart.forEach(function(item, index) {
+
+        const subtotal =
+            item.price * item.quantity;
+
+        total += subtotal;
+
+
+        html += `
+
+            <div class="cart-item">
+
+                <div>
+
+                    <div class="cart-item-name">
+                        ${item.name}
+                    </div>
+
+                    <small>
+                        ${item.quantity} x
+                        &dollar;${item.price.toLocaleString("id-ID")}
+                    </small>
+
+                </div>
+
+
+                <div>
+
+                    <span class="cart-item-price">
+
+                        &dollar;${subtotal.toLocaleString("id-ID")}
+
+                    </span>
+
+                    <button
+                        onclick="removeFromCart(${index})">
+
+                        Hapus
+
+                    </button>
+
+                </div>
+
+            </div>
+
+        `;
+
+    });
+
+
+    cartItems.innerHTML = html;
+
+
+    cartTotal.innerHTML =
+        "&dollar;" + total.toLocaleString("id-ID");
+}
+
+
+/* =========================================================
+   HAPUS PESANAN
+========================================================= */
+
+function removeFromCart(index) {
+
+    cart.splice(index, 1);
+
+    updateCart();
+
+}
+
+
+/* =========================================================
+   BUKA CHECKOUT
+========================================================= */
+
+function openCheckout() {
+
+    if (cart.length === 0) {
+
+        alert(
+            "Silakan pilih menu terlebih dahulu."
+        );
+
+        return;
+    }
+
+
+    document.getElementById(
+        "checkoutModal"
+    ).style.display = "flex";
+
+
+    document.getElementById(
+        "checkoutForm"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "qrisPayment"
+    ).style.display = "none";
+
+}
+
+
+/* =========================================================
+   TUTUP CHECKOUT
+========================================================= */
+
+function closeCheckout() {
+
+    document.getElementById(
+        "checkoutModal"
+    ).style.display = "none";
+
+}
+
+
+/* =========================================================
+   MULAI PEMBAYARAN
+========================================================= */
+
+function startPayment() {
+
+    const name =
+        document.getElementById(
+            "customerName"
+        ).value.trim();
+
+
+    if (name === "") {
+
+        alert(
+            "Silakan masukkan nama pemesan."
+        );
+
+        return;
+    }
+
+
+    document.getElementById(
+        "checkoutForm"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "qrisPayment"
+    ).style.display = "block";
+
+
+    startTimer();
+
+}
+
+
+/* =========================================================
+   TIMER 10 MENIT
+========================================================= */
+
+function startTimer() {
+
+    clearInterval(paymentTimer);
+
+
+    timeLeft = 600;
+
+
+    updateTimer();
+
+
+    paymentTimer = setInterval(function() {
+
+        timeLeft--;
+
+
+        updateTimer();
+
+
+        if (timeLeft <= 0) {
+
+            clearInterval(paymentTimer);
+
+            paymentExpired();
+
+        }
+
+    }, 1000);
+
+}
+
+
+/* =========================================================
+   UPDATE TIMER
+========================================================= */
+
+function updateTimer() {
+
+    const minutes =
+        Math.floor(timeLeft / 60);
+
+    const seconds =
+        timeLeft % 60;
+
+
+    document.getElementById(
+        "paymentTimer"
+    ).textContent =
+
+        String(minutes).padStart(2, "0")
+        + ":" +
+        String(seconds).padStart(2, "0");
+
+}
+
+
+/* =========================================================
+   PEMBAYARAN HABIS
+========================================================= */
+
+function paymentExpired() {
+
+    alert(
+        "Waktu pembayaran telah habis. " +
+        "Pesanan dibatalkan."
+    );
+
+
+    cart = [];
+
+
+    updateCart();
+
+
+    document.getElementById(
+        "checkoutModal"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "checkoutForm"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "qrisPayment"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "customerName"
+    ).value = "";
+
+}
+
+
+/* =========================================================
+   SELESAI PEMBAYARAN
+========================================================= */
+
+function finishPayment() {
+
+    clearInterval(paymentTimer);
+
+
+    alert(
+        "Terima kasih. Pembayaran telah dikonfirmasi. " +
+        "Pesanan Anda sedang diproses."
+    );
+
+
+    cart = [];
+
+
+    updateCart();
+
+
+    document.getElementById(
+        "checkoutModal"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "checkoutForm"
+    ).style.display = "block";
+
+
+    document.getElementById(
+        "qrisPayment"
+    ).style.display = "none";
+
+
+    document.getElementById(
+        "customerName"
+    ).value = "";
+
+}
+
+
+/* =========================================================
+   KLIK DI LUAR MODAL
+========================================================= */
+
+document.getElementById(
+    "checkoutModal"
+).addEventListener("click", function(event) {
+
+    if (event.target === this) {
+
+        closeCheckout();
+
+    }
+
+});
 
 </script>
 </body>
